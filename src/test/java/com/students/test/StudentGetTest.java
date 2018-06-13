@@ -1,7 +1,47 @@
 package com.students.test;
 
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import com.jayway.restassured.RestAssured;
+import com.jayway.restassured.response.Response;
+
+import static org.hamcrest.Matchers.*;
+import static com.jayway.restassured.RestAssured.*;
+
 public class StudentGetTest {
 
+	@BeforeClass
+	public static void init() {
+		
+		RestAssured.baseURI = "http://localhost";
+		RestAssured.port = 8080;
+		RestAssured.basePath = "/student";
+	}
 	
-	
+	@Test
+	public void getAllStundenInformation() {
+		/**
+		 * given()
+		 * set cookies, add auth, adding parameters, setting header info
+		 * .when()
+		 * GET,POST,PUT,DELETE, etc.
+		 * .then()
+		 * Validate status code, extract response extract headers, extract cookies, extract header info
+		 */
+		Response response =  given()
+		.when()
+		.get("/list");
+		
+		System.out.println(response.body().prettyPrint());
+		
+		
+		//Validate the status code
+		given()
+		.when()
+		.get("/list")
+		.then()
+		.statusCode(200);
+		
+	}
 }
