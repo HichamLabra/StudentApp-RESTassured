@@ -1,5 +1,6 @@
 package com.student.test;
 
+import static org.hamcrest.Matchers.*;
 import static com.jayway.restassured.RestAssured.*;
 
 import java.util.ArrayList;
