@@ -1,4 +1,4 @@
-package com.students.test;
+package com.student.test;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
