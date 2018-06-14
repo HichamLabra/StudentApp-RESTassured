@@ -1,26 +1,13 @@
 package com.student.test;
 
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.response.Response;
+import com.student.base.TestBase;
 
 import static com.jayway.restassured.RestAssured.*;
 
-public class StudentGetTest {
-
-	/**
-	 * This method initialized the base URI from StudenApplication and specify port
-	 * number + bass path
-	 */
-	@BeforeClass
-	public static void init() {
-
-		RestAssured.baseURI = "http://localhost";
-		RestAssured.port = 8080;
-		RestAssured.basePath = "/student";
-	}
+public class StudentGetTest extends TestBase {
 
 	/**
 	 * This Method shows how to describe a request given() set cookies, add auth,
