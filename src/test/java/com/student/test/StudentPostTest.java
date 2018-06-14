@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 import static com.jayway.restassured.RestAssured.*;
 
-public class StudentPutTest {
+public class StudentPostTest {
 
 	@BeforeClass
 	public static void init() {
@@ -36,7 +36,7 @@ public class StudentPutTest {
 		Student student = new Student();
 		student.setFirstName("Hicham");
 		student.setLastName("labra");
-		student.setEmail("hichla@ab.de");
+		student.setEmail("hichddla@ab.de");
 		student.setProgramme("Computer");
 		student.setCourses(courses);
 		
