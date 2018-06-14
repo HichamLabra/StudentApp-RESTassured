@@ -5,10 +5,9 @@ import org.junit.Test;
 
 import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.http.ContentType;
-import com.jayway.restassured.response.Response;
 import com.student.model.Student;
 
-import static org.hamcrest.Matchers.*;
+
 
 import java.util.ArrayList;
 

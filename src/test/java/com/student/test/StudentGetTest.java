@@ -6,7 +6,6 @@ import org.junit.Test;
 import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.response.Response;
 
-import static org.hamcrest.Matchers.*;
 import static com.jayway.restassured.RestAssured.*;
 
 public class StudentGetTest {
@@ -36,7 +35,7 @@ public class StudentGetTest {
 				.when()
 				.get("/list");
 
-		//System.out.println(response.body().prettyPrint());
+		System.out.println(response.body().prettyPrint());
 
 		// Validate the status code
 		given()
@@ -56,7 +55,7 @@ public class StudentGetTest {
 				.when()
 				.get("/1");
 
-		//System.out.println(response.body().prettyPrint());
+		System.out.println(response.body().prettyPrint());
 		
 		given()
 		.when()
