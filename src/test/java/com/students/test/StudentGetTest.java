@@ -71,12 +71,14 @@ public class StudentGetTest {
 	@Test
 	public void getStudenFromFA() {
 		
+		//Don't work! The Response is empty
 		Response response = given()
 				.when()
 				.get("/list?programme=Fincancial Analysis&limit=2");
 		
 		System.out.println(response.prettyPeek());
 		
+		//It's works fine! The Response show some results
 		Response response2 = given()
 				.param("programme", "Financial Analysis")
 				.param("limit", 2)
