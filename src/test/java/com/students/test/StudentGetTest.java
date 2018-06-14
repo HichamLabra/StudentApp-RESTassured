@@ -48,7 +48,7 @@ public class StudentGetTest {
 	}
 
 	/**
-	 * 
+	 * This Method display student information by ID
 	 */
 	@Test
 	public void getStudenInfo() {
@@ -63,5 +63,26 @@ public class StudentGetTest {
 		.get("/1")
 		.then()
 		.statusCode(200);
+	}
+	
+	/**
+	 * 
+	 */
+	@Test
+	public void getStudenFromFA() {
+		
+		Response response = given()
+				.when()
+				.get("/list?programme=Fincancial Analysis&limit=2");
+		
+		System.out.println(response.prettyPeek());
+		
+		Response response2 = given()
+				.param("programme", "Financial Analysis")
+				.param("limit", 2)
+				.when()
+				.get("/list");
+		
+		System.out.println(response2.prettyPeek());
 	}
 }
