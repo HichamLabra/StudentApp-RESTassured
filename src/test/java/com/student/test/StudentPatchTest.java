@@ -12,7 +12,7 @@ import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.http.ContentType;
 import com.student.model.Student;
 
-public class StudentPutTest {
+public class StudentPatchTest {
 
 	@BeforeClass
 	public static void init() {
@@ -23,9 +23,8 @@ public class StudentPutTest {
 	
 	}
 	
-	
 	@Test
-	public void updateStudent() {
+	public void patchStudent() {
 		
 		ArrayList<String> courses = new ArrayList<String>();
 		courses.add("Java");
@@ -37,7 +36,7 @@ public class StudentPutTest {
 		Student student = new Student();
 		student.setFirstName("Hicham");
 		student.setLastName("labra");
-		student.setEmail("hichddla@ab.de");
+		student.setEmail("maxjojo@ab.de");
 		student.setProgramme("Computer");
 		student.setCourses(courses);
 		
@@ -45,9 +44,8 @@ public class StudentPutTest {
 		.contentType(ContentType.JSON)
 		.when()
 		.body(student)
-		.put("/103")
+		.patch("/103")
 		.then()
 		.statusCode(200);
-
 	}
 }
