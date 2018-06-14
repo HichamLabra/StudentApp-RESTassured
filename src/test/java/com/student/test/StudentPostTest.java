@@ -26,9 +26,9 @@ public class StudentPostTest extends TestBase {
 		
 		Student student = new Student();
 		student.setFirstName("Hicham");
-		student.setLastName("labra");
-		student.setEmail("hichddla@ab.de");
-		student.setProgramme("Computer");
+		student.setLastName("Labrahimi");
+		student.setEmail("hicham.labrahimi@googlemail.de");
+		student.setProgramme("Computer Scince");
 		student.setCourses(courses);
 		
 		given()

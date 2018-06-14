@@ -19,22 +19,23 @@ public class StudentPutTest extends TestBase{
 		ArrayList<String> courses = new ArrayList<String>();
 		courses.add("Java");
 		courses.add("C++");
-		courses.add("fsdlfjö");
-		courses.add("sadfjlsdfjö");
+		courses.add("RESTassured");
+		courses.add("SerenityBDD");
+		courses.add("Maven");
 		
 		
 		Student student = new Student();
 		student.setFirstName("Hicham");
-		student.setLastName("labra");
-		student.setEmail("hichddla@ab.de");
-		student.setProgramme("Computer");
+		student.setLastName("Labrahimi");
+		student.setEmail("hicham.labrahimi@googlemail.de");
+		student.setProgramme("Computer Scince");
 		student.setCourses(courses);
 		
 		given()
 		.contentType(ContentType.JSON)
 		.when()
 		.body(student)
-		.put("/103")
+		.put("/101")
 		.then()
 		.statusCode(200);
 
