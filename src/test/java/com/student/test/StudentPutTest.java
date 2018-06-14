@@ -35,7 +35,7 @@ public class StudentPutTest extends TestBase{
 		.contentType(ContentType.JSON)
 		.when()
 		.body(student)
-		.put("/101")
+		.put("/104")
 		.then()
 		.statusCode(200);
 

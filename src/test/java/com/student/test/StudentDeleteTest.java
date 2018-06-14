@@ -14,7 +14,7 @@ public class StudentDeleteTest extends TestBase {
 	public void deleteStudent() {
 		given()
 		.when()
-		.delete("/101")
+		.delete("/104")
 		.then()
 		.statusCode(204);
 	}

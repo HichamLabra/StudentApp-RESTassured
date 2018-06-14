@@ -34,7 +34,7 @@ public class StudentPatchTest extends TestBase{
 		.contentType(ContentType.JSON)
 		.when()
 		.body(student)
-		.patch("/101")
+		.patch("/104")
 		.then()
 		.statusCode(200);
 	}
