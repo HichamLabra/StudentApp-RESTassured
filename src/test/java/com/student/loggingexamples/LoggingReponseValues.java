@@ -55,17 +55,17 @@ public class LoggingReponseValues extends TestBase {
 	 */
 	@Test
 	public void test003() {
-		System.out.println("---------------Printing Response Body---------------");
+		System.out.println("---------------Printing Response Body if Validation Fails---------------");
 		
 		given()
 		.param("programme", "Computer Science")
 		.param("limit", "1")
 		.when()
-		.get("/list")
+		.get("/")
 		.then()
 		.log()
-		.body()
-		.statusCode(200);
+		.ifValidationFails().statusCode(200);
+		
 	}
 	
 	/**
@@ -77,7 +77,7 @@ public class LoggingReponseValues extends TestBase {
 		
 		given()
 		.param("programme", "Computer Science")
-		.param("limit", "-1")
+		.param("limit", "1")
 		.when()
 		.get("/list")
 		.then()

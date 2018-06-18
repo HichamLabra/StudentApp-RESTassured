@@ -7,14 +7,16 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 import static com.jayway.restassured.RestAssured.*;
-
+import com.jayway.restassured.RestAssured;
+import com.jayway.restassured.config.RestAssuredConfig;
+import com.jayway.restassured.config.LogConfig;
 import com.jayway.restassured.http.ContentType;
 import com.student.base.TestBase;
 import com.student.model.Student;
 
 public class LoggingRequestValues extends TestBase {
 	
-	
+	public boolean logFlag = false;
 	/**
 	 * This test will print out all the request headers
 	 */
@@ -22,14 +24,16 @@ public class LoggingRequestValues extends TestBase {
 	public void test001() {
 		System.out.println("---------------Printing Request Headres---------------");
 		
-		given()
-		.log()
-		.headers()
-		.when()
-		.get("/1")
-		.then()
-		.statusCode(200);
+			given()
+			.log()
+			.headers()
+			.when()
+			.get("/1")
+			.then()
+			.statusCode(200);
+			
 	}
+		
 	
 	/**
 	 * This test will print out all the request Parameters
