@@ -132,12 +132,12 @@ public class LoggingRequestValues extends TestBase {
 		given()
 		.contentType(ContentType.JSON)
 		.log()
-		.all()
+		.ifValidationFails()
 		.when()
 		.body(student)
 		.post()
 		.then()
-		.statusCode(500);
+		.statusCode(201);
 	}
 
 }
