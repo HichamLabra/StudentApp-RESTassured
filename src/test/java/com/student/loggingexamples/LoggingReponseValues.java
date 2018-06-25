@@ -55,25 +55,7 @@ public class LoggingReponseValues extends TestBase {
 	 */
 	@Test
 	public void test003() {
-		System.out.println("---------------Printing Response Body if Validation Fails---------------");
-		
-		given()
-		.param("programme", "Computer Science")
-		.param("limit", "1")
-		.when()
-		.get("/")
-		.then()
-		.log()
-		.ifValidationFails().statusCode(200);
-		
-	}
-	
-	/**
-	 * This test will print the Response incase of an error
-	 */
-	@Test
-	public void test004() {
-		System.out.println("---------------Printing Response incase of an error---------------");
+		System.out.println("---------------Printing Response Body ---------------");
 		
 		given()
 		.param("programme", "Computer Science")
@@ -82,7 +64,45 @@ public class LoggingReponseValues extends TestBase {
 		.get("/list")
 		.then()
 		.log()
+		.body()
+		.statusCode(200);
+		
+	}
+	
+	/**
+	 * This test will print the Response incase of an error
+	 */
+	@Test
+	public void test004() {
+		System.out.println("---------------Printing Response Body incase of an error---------------");
+		
+		given()
+		.param("programme", "Computer Science")
+		.param("limit", "-1")
+		.when()
+		.get("/list")
+		.then()
+		.log()
 		.ifError();
+		
+	}
+	
+	/**
+	 * This test will print the Response if validation false
+	 */
+	@Test
+	public void test005() {
+		System.out.println("---------------Printing Response if validation false---------------");
+		
+		given()
+		.param("programme", "Computer Science")
+		.param("limit", "1")
+		.when()
+		.get("/list")
+		.then()
+		.log()
+		.ifValidationFails()
+		.statusCode(201);
 	}
 	
 
