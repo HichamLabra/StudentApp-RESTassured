@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import com.jayway.restassured.response.Response;
 import com.student.base.TestBase;
-
+import static org.hamcrest.Matchers.*;
 import static com.jayway.restassured.RestAssured.*;
 
 public class StudentGetTest extends TestBase {
